@@ -95,9 +95,9 @@ namespace WindowsFormsApp18._3
         }
         public new string Gegevens()
         {
-            return base.Gegevens() + $"hoogte = {H} \n" +
-                $" oppervlakte = {Oppervlakte():0.00} \n" +
-                $" volume = {Volume():0.00} ";
+            return base.Gegevens() + Environment.NewLine + $"hoogte = {H} \n" +
+                $"oppervlakte = {Oppervlakte():0.00} \n" +
+                $"volume = {Volume():0.00} ";
         }
     }
 }
