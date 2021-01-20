@@ -46,7 +46,7 @@ namespace WindowsFormsApp18._3
         }
         public Cirkel()
         {
-            R = _r;
+            R = 0;
         }
         public Cirkel(double x, double y, double r) : base(x, y)
         {
@@ -62,7 +62,7 @@ namespace WindowsFormsApp18._3
         }
         public new string Gegevens()
         {
-            return base.Gegevens() + $"straal {R} ";
+            return base.Gegevens() + $"straal {R:0.00} ";
         }
         //public override string ToString()
         //{
@@ -89,9 +89,9 @@ namespace WindowsFormsApp18._3
         {
             return Math.PI * Math.Pow(R, 2) * H;
         }
-        public double Oppervlakte()
+        public new double Oppervlakte()
         {
-            return (2 * Math.PI * Math.Pow(R, 2)) + (2 * Math.PI * R * H);
+            return (2 * base.Oppervlakte()) + (2 * Math.PI * R * H);
         }
         public new string Gegevens()
         {
