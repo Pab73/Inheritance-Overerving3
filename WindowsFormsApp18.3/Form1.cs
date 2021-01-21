@@ -26,21 +26,21 @@ namespace WindowsFormsApp18._3
             punt = new Punt(Convert.ToDouble(txtX.Text), Convert.ToDouble(txtY.Text));
             MessageBox.Show($"{punt.Gegevens()}", "Result. ", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-
-        double eenStraal = 0;
         private void btnCikel_Click(object sender, EventArgs e)
         {
-            cirkel = new Cirkel(Convert.ToDouble(txtX.Text), Convert.ToDouble(txtY.Text), eenStraal);
-            eenStraal = Math.Sqrt(Math.Pow(cirkel.X, 2) + Math.Pow(cirkel.Y, 2));
-            cirkel.R = eenStraal;
+            cirkel = new Cirkel(Convert.ToDouble(txtX.Text), Convert.ToDouble(txtY.Text), BerekenStraal());
             MessageBox.Show($"{cirkel.Gegevens()}", "Result. ", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-
         private void btnCilinder_Click(object sender, EventArgs e)
         {
-            cilinder = new Cilinder(Convert.ToDouble(txtX.Text), Convert.ToDouble(txtY.Text), eenStraal, Convert.ToDouble(txtHoogte.Text));
-            cilinder.R = eenStraal;
+            cilinder = new Cilinder(Convert.ToDouble(txtX.Text), Convert.ToDouble(txtY.Text), BerekenStraal(), Convert.ToDouble(txtHoogte.Text));
             MessageBox.Show($"{cilinder.Gegevens()} ", "Result. ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        private double BerekenStraal()
+        {
+            double eenStraal;
+            eenStraal = Math.Sqrt(Math.Pow(Convert.ToDouble(txtX.Text), 2) + Math.Pow(Convert.ToDouble(txtY.Text), 2));
+            return eenStraal;
         }
     }
 }
