@@ -39,6 +39,7 @@ namespace WindowsFormsApp18._3
         private void btnCilinder_Click(object sender, EventArgs e)
         {
             cilinder = new Cilinder(Convert.ToDouble(txtX.Text), Convert.ToDouble(txtY.Text), eenStraal, Convert.ToDouble(txtHoogte.Text));
+            cilinder.R = eenStraal;
             MessageBox.Show($"{cilinder.Gegevens()} ", "Result. ", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }

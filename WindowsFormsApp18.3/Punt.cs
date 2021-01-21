@@ -31,7 +31,7 @@ namespace WindowsFormsApp18._3
             X = x;
             Y = y;
         }
-        public string Gegevens()
+        public virtual string Gegevens()
         {
             return $"({X}, {Y}) ";
         }
@@ -56,11 +56,11 @@ namespace WindowsFormsApp18._3
         {
             return 2 * Math.PI * R;
         }
-        public double Oppervlakte()
+        public virtual double Oppervlakte()
         {
             return Math.PI * Math.Pow(R, 2);
         }
-        public new string Gegevens()
+        public override string Gegevens()
         {
             return base.Gegevens() + $"straal {R:0.00} ";
         }
@@ -89,11 +89,11 @@ namespace WindowsFormsApp18._3
         {
             return Math.PI * Math.Pow(R, 2) * H;
         }
-        public new double Oppervlakte()
+        public override double Oppervlakte()
         {
             return (2 * base.Oppervlakte()) + (2 * Math.PI * R * H);
         }
-        public new string Gegevens()
+        public override string Gegevens()
         {
             return base.Gegevens() + Environment.NewLine + $"hoogte = {H} \n" +
                 $"oppervlakte = {Oppervlakte():0.00} \n" +
